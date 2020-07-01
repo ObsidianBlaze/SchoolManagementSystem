@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container-fluid nav-container">
+        <nav>
+            <form action="" class="form-inline">
+                <div class="search-field">
+                    <div class="form-group first">
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="form-group second">
+                        <button class="btn">Search</button>
+                    </div>
+                </div>
+            </form>
+            <ul>
+                <li>
+                    <a href="#" class="dash-active">Dashboard <i class="fa fa-tachometer" aria-hidden="true"></i></a>
+                </li>
+                <li>
+                    <a href="profile.html">Profile <i class="fa fa-user" aria-hidden="true"></i></a>
+                </li>
+                <li>
+                    <a href="#">Logout <i class="fa fa-power-off" aria-hidden="true"></i></a>
+                </li>
+            </ul>
+            <div class="user-img animate__animated animate__swing">
+                <img src="img/avatar04.png" alt="avater-img" class="img-circle">
+            </div>
+        </nav>
+        <div class="user-intro">
+            <h1 class="animate__animated animate__tada">Welcome <span>User</span>,</h1>
+            <h4 class="animate__animated animate__lightSpeedInLeft">We have a few things for you to look at.</h4>
+        </div>
+    </div>
+    <!-- sms dashboard content  -->
+    <div class="container-fluid dash-content">
+        <div class="content-box1">
+            <div class="class-title">
+                <h1>Current Class Name 0503</h1>
+                <p>Brief Description of the class here, probably an ongoing class on how to build robot equipped with a particle accelerator! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam eius quasi similique eum sed labore neque debitis
+                    facilis quia itaque. Odit sunt, ratione delectus voluptas accusamus nam nostrum tempore sed.</p>
+            </div>
+            <div class="students">
+                <h3>Students</h3>
+                <div class="student-icon">
+                    <div class="stu-img">
+                        <a href="student-details.html"><img src="img/user1-128x128.jpg" class="img-circle" alt=""></a>
+                    </div>
+                    <div class="stu-img">
+                        <a href="student-details.html"><img src="img/user2-160x160.jpg" class="img-circle" alt=""></a>
+                    </div>
+                    <div class="stu-img">
+                        <a href="student-details.html"><img src="img/user3-128x128.jpg" class="img-circle" alt=""></a>
+                    </div>
+                    <div class="stu-img more">
+                        <h1>
+                            <a href="view-all-students.html">+12</a>
+                        </h1>
+                    </div>
+                </div>
+            </div>
+            <a href="add-student.html" class="btn btn-primary add-btn">Add Student To Class</a>
+        </div>
+
+        <div class="content-box2">
+            <div class="note">
+                <h3>Class Media Files <i style="color: rgb(0, 128, 90);" class="fa fa-book" aria-hidden="true"></i></h3>
+                <ul>
+                    <li>Osas</li>
+                    <li>Arinze</li>
+                    <li>Seyi</li>
+                    <li>Jerry</li>
+                    <li>Isaac</li>
+                    <li>Jerry2</li>
+                </ul>
+                <div class="options">
+                    <h3>Options <i style="color: rgb(0, 128, 90);" class="fa fa-wrench" aria-hidden="true"></i></h3>
+                    </h3>
+                    <div>
+                        <a href="#" class="btn btn-primary add-btn">Upload Media Files</a>
+                        <a href="#" class="btn btn-danger">End Class</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
