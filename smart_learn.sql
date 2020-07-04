@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 04, 2020 at 11:01 PM
+-- Generation Time: Jul 04, 2020 at 11:12 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -68,7 +68,8 @@ CREATE TABLE `student` (
   `firstname` varchar(200) NOT NULL,
   `lastname` varchar(200) NOT NULL,
   `address` varchar(1000) NOT NULL,
-  `photo` varchar(1000) NOT NULL,
+  `photo` varchar(1000) DEFAULT NULL,
+  `about` varchar(2000) DEFAULT NULL,
   `username` varchar(200) NOT NULL,
   `password` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
@@ -80,8 +81,8 @@ CREATE TABLE `student` (
 -- Dumping data for table `student`
 --
 
-INSERT INTO `student` (`student_id`, `firstname`, `lastname`, `address`, `photo`, `username`, `password`, `email`, `course_id`, `date_of_creation`) VALUES
-(1, 'david', 'samuel', 'i live alone', 'passpoet', 'past poet', '12345', 'df@gmail.com', NULL, '2020-07-04');
+INSERT INTO `student` (`student_id`, `firstname`, `lastname`, `address`, `photo`, `about`, `username`, `password`, `email`, `course_id`, `date_of_creation`) VALUES
+(1, 'david', 'samuel', 'i live alone', 'passpoet', NULL, 'past poet', '12345', 'df@gmail.com', NULL, '2020-07-04');
 
 -- --------------------------------------------------------
 
@@ -94,7 +95,8 @@ CREATE TABLE `teacher` (
   `firstname` varchar(200) NOT NULL,
   `lastname` varchar(200) NOT NULL,
   `address` varchar(1000) NOT NULL,
-  `photo` varchar(1000) NOT NULL,
+  `about` varchar(2000) DEFAULT NULL,
+  `photo` varchar(1000) DEFAULT NULL,
   `email` varchar(200) NOT NULL,
   `password` varchar(100) NOT NULL,
   `date_of_creation` date NOT NULL
@@ -104,8 +106,8 @@ CREATE TABLE `teacher` (
 -- Dumping data for table `teacher`
 --
 
-INSERT INTO `teacher` (`teacher_id`, `firstname`, `lastname`, `address`, `photo`, `email`, `password`, `date_of_creation`) VALUES
-(1, 'Danny', 'Sammy', 'I Live', 'myphoto', 'w@gmail.com', '12345', '2020-07-08');
+INSERT INTO `teacher` (`teacher_id`, `firstname`, `lastname`, `address`, `about`, `photo`, `email`, `password`, `date_of_creation`) VALUES
+(1, 'Danny', 'Sammy', 'I Live', NULL, 'myphoto', 'w@gmail.com', '12345', '2020-07-08');
 
 -- --------------------------------------------------------
 

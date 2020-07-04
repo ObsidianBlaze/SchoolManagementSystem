@@ -38,6 +38,7 @@ course	test	student		teacher		admin		result
 #username
 #password
 #email
+#about
 #course_id foreign key (Can be null)
 #date_of_creation
 
@@ -48,6 +49,7 @@ course	test	student		teacher		admin		result
 #address
 #photo
 #email
+#about
 #password
 #date_of_creation
 
