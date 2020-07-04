@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 04, 2020 at 10:42 PM
+-- Generation Time: Jul 04, 2020 at 11:01 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -73,8 +73,6 @@ CREATE TABLE `student` (
   `password` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `course_id` int(11) DEFAULT NULL,
-  `result_id` int(11) DEFAULT NULL,
-  `test_id` int(11) DEFAULT NULL,
   `date_of_creation` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -82,8 +80,8 @@ CREATE TABLE `student` (
 -- Dumping data for table `student`
 --
 
-INSERT INTO `student` (`student_id`, `firstname`, `lastname`, `address`, `photo`, `username`, `password`, `email`, `course_id`, `result_id`, `test_id`, `date_of_creation`) VALUES
-(1, 'david', 'samuel', 'i live alone', 'passpoet', 'past poet', '12345', 'df@gmail.com', NULL, NULL, NULL, '2020-07-04');
+INSERT INTO `student` (`student_id`, `firstname`, `lastname`, `address`, `photo`, `username`, `password`, `email`, `course_id`, `date_of_creation`) VALUES
+(1, 'david', 'samuel', 'i live alone', 'passpoet', 'past poet', '12345', 'df@gmail.com', NULL, '2020-07-04');
 
 -- --------------------------------------------------------
 
@@ -152,9 +150,7 @@ ALTER TABLE `result`
 --
 ALTER TABLE `student`
   ADD PRIMARY KEY (`student_id`),
-  ADD KEY `course_id` (`course_id`),
-  ADD KEY `result_id` (`result_id`),
-  ADD KEY `test_id` (`test_id`);
+  ADD KEY `course_id` (`course_id`);
 
 --
 -- Indexes for table `teacher`
@@ -223,9 +219,7 @@ ALTER TABLE `result`
 -- Constraints for table `student`
 --
 ALTER TABLE `student`
-  ADD CONSTRAINT `student_ibfk_1` FOREIGN KEY (`course_id`) REFERENCES `course` (`course_id`),
-  ADD CONSTRAINT `student_ibfk_2` FOREIGN KEY (`result_id`) REFERENCES `result` (`result_id`),
-  ADD CONSTRAINT `student_ibfk_3` FOREIGN KEY (`test_id`) REFERENCES `test` (`test_id`);
+  ADD CONSTRAINT `student_ibfk_1` FOREIGN KEY (`course_id`) REFERENCES `course` (`course_id`);
 
 --
 -- Constraints for table `test`

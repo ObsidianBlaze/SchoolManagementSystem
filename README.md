@@ -39,8 +39,6 @@ course	test	student		teacher		admin		result
 #password
 #email
 #course_id foreign key (Can be null)
-#result_id foreign key (Can be null)
-#test_id foreign key (Can be null)
 #date_of_creation
 
 			#Teacher
