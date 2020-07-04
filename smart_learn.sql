@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 04, 2020 at 01:57 AM
+-- Generation Time: Jul 04, 2020 at 10:42 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -30,10 +30,19 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `course` (
   `course_id` int(11) NOT NULL,
+  `teacher_id` int(11) DEFAULT NULL,
   `course_name` varchar(360) NOT NULL,
   `course_code` varchar(150) NOT NULL,
   `course_status` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `course`
+--
+
+INSERT INTO `course` (`course_id`, `teacher_id`, `course_name`, `course_code`, `course_status`) VALUES
+(2, 1, 'java', 'ja', 'ongoing'),
+(3, NULL, 'Go', 'Lang', 'Ongoing');
 
 -- --------------------------------------------------------
 
@@ -90,9 +99,15 @@ CREATE TABLE `teacher` (
   `photo` varchar(1000) NOT NULL,
   `email` varchar(200) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `course_id` int(11) DEFAULT NULL,
   `date_of_creation` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `teacher`
+--
+
+INSERT INTO `teacher` (`teacher_id`, `firstname`, `lastname`, `address`, `photo`, `email`, `password`, `date_of_creation`) VALUES
+(1, 'Danny', 'Sammy', 'I Live', 'myphoto', 'w@gmail.com', '12345', '2020-07-08');
 
 -- --------------------------------------------------------
 
@@ -122,7 +137,8 @@ INSERT INTO `test` (`test_id`, `student_id`, `score`, `date_of_creation`) VALUES
 -- Indexes for table `course`
 --
 ALTER TABLE `course`
-  ADD PRIMARY KEY (`course_id`);
+  ADD PRIMARY KEY (`course_id`),
+  ADD KEY `teacher_id` (`teacher_id`);
 
 --
 -- Indexes for table `result`
@@ -144,8 +160,7 @@ ALTER TABLE `student`
 -- Indexes for table `teacher`
 --
 ALTER TABLE `teacher`
-  ADD PRIMARY KEY (`teacher_id`),
-  ADD KEY `course_id` (`course_id`);
+  ADD PRIMARY KEY (`teacher_id`);
 
 --
 -- Indexes for table `test`
@@ -162,7 +177,7 @@ ALTER TABLE `test`
 -- AUTO_INCREMENT for table `course`
 --
 ALTER TABLE `course`
-  MODIFY `course_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `course_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `result`
@@ -180,7 +195,7 @@ ALTER TABLE `student`
 -- AUTO_INCREMENT for table `teacher`
 --
 ALTER TABLE `teacher`
-  MODIFY `teacher_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `teacher_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `test`
@@ -191,6 +206,12 @@ ALTER TABLE `test`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `course`
+--
+ALTER TABLE `course`
+  ADD CONSTRAINT `course_ibfk_1` FOREIGN KEY (`teacher_id`) REFERENCES `teacher` (`teacher_id`);
 
 --
 -- Constraints for table `result`
@@ -205,12 +226,6 @@ ALTER TABLE `student`
   ADD CONSTRAINT `student_ibfk_1` FOREIGN KEY (`course_id`) REFERENCES `course` (`course_id`),
   ADD CONSTRAINT `student_ibfk_2` FOREIGN KEY (`result_id`) REFERENCES `result` (`result_id`),
   ADD CONSTRAINT `student_ibfk_3` FOREIGN KEY (`test_id`) REFERENCES `test` (`test_id`);
-
---
--- Constraints for table `teacher`
---
-ALTER TABLE `teacher`
-  ADD CONSTRAINT `teacher_ibfk_1` FOREIGN KEY (`course_id`) REFERENCES `course` (`course_id`);
 
 --
 -- Constraints for table `test`

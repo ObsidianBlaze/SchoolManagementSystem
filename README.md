@@ -24,6 +24,7 @@ course	test	student		teacher		admin		result
 
 			#Course
 #course_id
+#teacher_id foreign key
 #course_name
 #course_code
 #course_status (To know if the courses are still ongoing or completed.)
@@ -50,7 +51,6 @@ course	test	student		teacher		admin		result
 #photo
 #email
 #password
-#course_id foreign key (Can be null)
 #date_of_creation
 
 			#Admin
