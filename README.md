@@ -3,18 +3,12 @@ A System that helps bridge the physical gap between students and tutors. Inspire
 
 #When trying to run the database, Execute it in a batch.
 
-#DATABASE
+**********INITIAL TABLES********
 
-#**********INITIAL TABLES********
+course	test	student		teacher		admin		result
 
-#course
-#test
-#student
-#teacher
-#admin
-#result
 
-#***********COLUMNS**********
+***********COLUMNS**********
 
 			#Test
 #test_id
@@ -64,10 +58,17 @@ A System that helps bridge the physical gap between students and tutors. Inspire
 
 
 			#Relationship
+			
 #Test table has the student id so as to link the student with the test that was taken for a particular course.
+
 #Result table has the student id so as to link the student with the result that was taken for a particular course.
+
 #Course has a status column to keep track of the course being taught by a teacher.
+
 #Course ID in the student's table is to link a student to a particular course being taken.
+
 #Result/Test ID are foreign keys in the students table to keep track of the students result and test scores.
+
 #The teacher has the course_id foreign key in order to select the course the teacher is taking.
+
 #The teacher can also change the status of the course due to the foreign key.
