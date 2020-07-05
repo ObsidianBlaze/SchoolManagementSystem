@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 04, 2020 at 11:12 PM
+-- Generation Time: Jul 05, 2020 at 08:47 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -73,7 +73,6 @@ CREATE TABLE `student` (
   `username` varchar(200) NOT NULL,
   `password` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `course_id` int(11) DEFAULT NULL,
   `date_of_creation` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -81,8 +80,20 @@ CREATE TABLE `student` (
 -- Dumping data for table `student`
 --
 
-INSERT INTO `student` (`student_id`, `firstname`, `lastname`, `address`, `photo`, `about`, `username`, `password`, `email`, `course_id`, `date_of_creation`) VALUES
-(1, 'david', 'samuel', 'i live alone', 'passpoet', NULL, 'past poet', '12345', 'df@gmail.com', NULL, '2020-07-04');
+INSERT INTO `student` (`student_id`, `firstname`, `lastname`, `address`, `photo`, `about`, `username`, `password`, `email`, `date_of_creation`) VALUES
+(1, 'david', 'samuel', 'i live alone', 'passpoet', NULL, 'past poet', '12345', 'df@gmail.com', '2020-07-04');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `student_course`
+--
+
+CREATE TABLE `student_course` (
+  `student_course_id` int(11) NOT NULL,
+  `course_id` int(11) NOT NULL,
+  `student_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -151,8 +162,15 @@ ALTER TABLE `result`
 -- Indexes for table `student`
 --
 ALTER TABLE `student`
-  ADD PRIMARY KEY (`student_id`),
-  ADD KEY `course_id` (`course_id`);
+  ADD PRIMARY KEY (`student_id`);
+
+--
+-- Indexes for table `student_course`
+--
+ALTER TABLE `student_course`
+  ADD PRIMARY KEY (`student_course_id`),
+  ADD KEY `course_id` (`course_id`),
+  ADD KEY `student_id` (`student_id`);
 
 --
 -- Indexes for table `teacher`
@@ -190,6 +208,12 @@ ALTER TABLE `student`
   MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `student_course`
+--
+ALTER TABLE `student_course`
+  MODIFY `student_course_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `teacher`
 --
 ALTER TABLE `teacher`
@@ -218,10 +242,11 @@ ALTER TABLE `result`
   ADD CONSTRAINT `result_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `student` (`student_id`);
 
 --
--- Constraints for table `student`
+-- Constraints for table `student_course`
 --
-ALTER TABLE `student`
-  ADD CONSTRAINT `student_ibfk_1` FOREIGN KEY (`course_id`) REFERENCES `course` (`course_id`);
+ALTER TABLE `student_course`
+  ADD CONSTRAINT `student_course_ibfk_1` FOREIGN KEY (`course_id`) REFERENCES `course` (`course_id`),
+  ADD CONSTRAINT `student_course_ibfk_2` FOREIGN KEY (`student_id`) REFERENCES `student` (`student_id`);
 
 --
 -- Constraints for table `test`

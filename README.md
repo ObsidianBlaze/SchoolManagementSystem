@@ -5,7 +5,7 @@ A System that helps bridge the physical gap between students and tutors. Inspire
 
 **********INITIAL TABLES********
 
-course	test	student		teacher		admin		result
+course	test	student		teacher		admin		result		student_course
 
 
 ***********COLUMNS**********
@@ -39,7 +39,6 @@ course	test	student		teacher		admin		result
 #password
 #email
 #about
-#course_id foreign key (Can be null)
 #date_of_creation
 
 			#Teacher
@@ -52,6 +51,11 @@ course	test	student		teacher		admin		result
 #about
 #password
 #date_of_creation
+
+			#Student_Course
+#student_course_id
+#student_id foreign key
+#course_id foreign key
 
 			#Admin
 
@@ -72,3 +76,4 @@ course	test	student		teacher		admin		result
 #The teacher has the course_id foreign key in order to select the course the teacher is taking.
 
 #The teacher can also change the status of the course due to the foreign key.
+#The student_course table links a student to a course. Meaning, a student can do multiple courses.
