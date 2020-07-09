@@ -7,6 +7,8 @@
     <title>SmartLearn</title>
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/main.css">
@@ -46,9 +48,25 @@
             </div>
         </div>
     </div>
+    <!-- how it works content -->
+    <h1 style="text-align: center; color:#d340e0;font-weight:200;text-transform:uppercase">How It Works</h1>
+    <div class="container-fluid owl-carousel owl-theme how-it-works">
+        <div class="item one">
+            <h1>Register As A Teacher</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius velit quaerat alias, molestias doloremque ipsam repellat nobis autem inventore cupiditate.</p>
+        </div>
+        <div class="item two">
+            <h1>Register As A Student</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius velit quaerat alias, molestias doloremque ipsam repellat nobis autem inventore cupiditate.</p>
+        </div>
+        <div class="item three">
+            <h1>Register As Batman</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius velit quaerat alias, molestias doloremque ipsam repellat nobis autem inventore cupiditate.</p>
+        </div>
+    </div>
     <!-- features content -->
     <div class="container-fluid">
-        <h1 data-aos="fade-right" style="text-align: center; color:#d340e0;">Features</h1>
+        <h1 data-aos="fade-right" style="text-align: center; color:#d340e0;text-transform:uppercase;">Features</h1>
         <div class="features">
             <div class="feature">
                 <div class="box" id="feature-1">
@@ -78,13 +96,80 @@
             </div>
         </div>
     </div>
+    <!-- footer -->
+    <footer>
+        <div class="container-fluid footer">
+            <div class="footer-content">
+                <div class="footer-box">
+                    <h3>Main Base</h3>
+                    <ul>
+                        <li>
+                            <i class="fa fa-map-marker"></i> SomeWhere In New York
+                        </li>
+                        <li><i class="fa fa-phone"></i> 080-xxxx-xxxx, 090-xxxx-xxxx</li>
+                        <li><i class="fa fa-envelope"></i> info@SmartLearn.com</li>
+                        <li><i class="fa fa-globe"></i> www.SmartLearn.com</li>
+                    </ul>
+                </div>
+                <div class="footer-box">
+                    <h3>Contact The Developers</h3>
+                    <ul>
+                        <li>
+                            <i class="fa fa-map-marker"></i> SomeWhere In New York
+                        </li>
+                        <li><i class="fa fa-phone"></i> 080-xxxx-xxxx, 090-xxxx-xxxx</li>
+                        <li><i class="fa fa-envelope"></i> info@SmartLearn.com</li>
+                        <li><i class="fa fa-globe"></i> www.SmartLearn.com</li>
+                    </ul>
+                </div>
+                <div class="footer-box">
+                    <h3>Follow Us On:</h3>
+                    <ul class="social-links">
+                        <li>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-telegram"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-date">
+                <p>
+                    <i class="fa fa-copyright">
+                      <span>2020</span>
+                      <span id="smart">SMART<span id="learn">LEARN</span></span>. </i
+                    >All rights reserved
+                  </p>
+            </div>
+        </div>
+    </footer>
     <!-- toggle dark mode -->
     <button title="Toggle Dark Mode" onclick="changeTheme()" class="toggle"><span class="fa fa-lightbulb-o"></span></button>
 
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
     <script src=" js/aos.js "></script>
     <script src="js/main.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".owl-carousel").owlCarousel({
+                items: 1,
+                loop: true,
+                dots: true,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                slideTransition: "ease-out"
+            });
+        });
+    </script>
     <script>
         AOS.init();
     </script>
