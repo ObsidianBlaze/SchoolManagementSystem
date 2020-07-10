@@ -511,6 +511,14 @@ body {
     color: #d340e0;
 }
 
+
+/* about page */
+
+.about-header {
+    border: 1px solid red;
+    height: 300px;
+}
+
 @media screen and (max-width:480px) {
     .logo {
         /* flex: 1; */
