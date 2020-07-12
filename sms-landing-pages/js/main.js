@@ -60,3 +60,11 @@ const changeTutorPageTheme = () => {
     changeIcon()
 
 }
+
+
+const team = document.getElementsByClassName("team-mate");
+if (window.innerWidth <= 480) {
+    for (i = 0; i < team.length; i++) {
+        team[i].setAttribute("data-aos", "fade-up")
+    }
+}
